@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lego Dataset Explorer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Lego Dataset Explorer">
+  <meta name="author" content="Stefan papp">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Lego Dataset Explorer</h1>
+    <h2>Coursera - DDP Project</h2>
+    <p>Stefan papp<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Logo Set Explorer</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>With this The Lego Set Explorer, we visualize LEGO Sets. The LEGO Set consists of Lego pieces until 2016.</p>
+
+<p>The dataset is from <a href="http://rebrickable.com/">Rebrickable.com</a>. It contains the basic information of each set (set id, year, number of pieces, theme, set name). There are more files on that web page, such as details on the pieces of the sets or colors. For this demo, we used only the sets.  </p>
+
+<p>Data Source: <a href="http://rebrickable.com/downloads">http://rebrickable.com/downloads</a> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Solution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We have used </p>
+
+<ul>
+<li>a data table to display all lego set items</li>
+<li>a filtering pane</li>
+<li>five plots to the datasets</li>
+</ul>
+
+<p>The app can be seen on <a href="https://stefanpapp.shinyapps.io/LegoSet_Explorer_-_App/">shinyapp</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>UI</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The heart of the UI is a display of the data set and the plot display. We used</p>
+
+<pre><code class="r">                   tabPanel(p(icon(&quot;table&quot;), &quot;Dataset&quot;),
+                            dataTableOutput(outputId=&quot;dTable&quot;)
+                   ), 
+
+                   tabPanel(p(icon(&quot;line-chart&quot;), &quot;Data Visualization&quot;),
+                            h4(&#39;Number of Sets by Year&#39;, align = &quot;center&quot;),
+                            h5(&#39;Hover over each point for Year and Total Number of Sets.&#39;, align =&quot;center&quot;),
+                            showOutput(&quot;setsByYear&quot;, &quot;nvd3&quot;),
+                            h4(&#39;Number of Themes by Year&#39;, align = &quot;center&quot;),
+                            h5(&#39;Hover over each bar for Year and Total Number of Themes.&#39;, align =&quot;center&quot;),
+                   )
+                 )
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Future consideration</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We can extend the whole explorer set with additional information such as information on</p>
+
+<ul>
+<li>pieces</li>
+<li>colors</li>
+<li>etc.</li>
+</ul>
+
+<p>We can also add some data engineering such as that we download and extract new files from the server if a new files exists.</p>
+
+<p>We can also explorer faster csv loading routines for the sake of functionality.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Logo Set Explorer'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Solution'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='UI'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Future consideration'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
