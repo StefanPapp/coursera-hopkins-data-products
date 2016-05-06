@@ -71,6 +71,11 @@ shinyUI(
             )     
         ), 
     
+    tabPanel("Help",
+             mainPanel(
+               includeMarkdown("help.md")
+             )
+    ),
         tabPanel("About",
                  mainPanel(
                    includeMarkdown("about.md")
